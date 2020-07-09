@@ -1,0 +1,15 @@
+
+DO THESE CHANGES:
+
+-> Replace "Feedback" with "Contact" or a Login Form in top rigth of the nav-bar.
+-> change font-family for text "India" in the header
+
+
+SPECIAL THINGS DONE:
+
+-> Full bg video -- added attributes - autoplay loop="true" muted="true";
+
+-> added scroll-behavior. - smooth scrolling when jumping from one section to another by button press.
+
+-> Added scroll-snap effect [ scroll-snap-type: y mandatory; ]
+         --also use scroll-snap-align attribute to the sections for alignment

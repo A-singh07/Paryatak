@@ -1,0 +1,279 @@
+@import 'config';
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    height: 100vh;   //Important for scroll behaviour
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+h1{
+    font-size: 1.8em;
+}
+
+// for all the buttons in the site
+.btn{
+    display: inline-block;
+    margin: 20px;
+    font-size: 1.4em;
+    background-image: $btn-gradient-1;
+    padding: 20px 40px;
+    border-radius: 2em;
+    color: rgb(38, 44, 109);
+    transition: all 0.4s ease;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.493);
+}
+
+// Animation -contents
+@keyframes modal-animate{
+    from{top: -100px; opacity: 0;}
+    to{top: 0px; opacity: 1;}
+}
+
+
+
+/* --------------- Landing Page ----------- */
+
+.mother-container{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory ;   // dealing with only y-axis and it's mandatory.
+
+    header{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center ;
+        line-height: 1em;
+        font-family: $quicksand;
+        scroll-snap-align: start;  // works with scroll-snap-type in the container to align the element
+    
+        .header-bg-wrap{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            overflow: hidden;
+    
+            video{
+                min-width: 100%;
+                min-height: 100%;
+            }
+        }
+    
+        .header-content{
+            text-align: center;
+            z-index: 1;
+            width: 100%;
+            height: 100vh;
+            padding-top: 12em;
+            color: white;
+            background-color: $sky-blue; //bg for overlay
+
+            h4{
+                font-size: 1.8em;
+            }
+    
+            h1{
+                font-size: 4em;
+
+                strong{
+                    font-family: $caveat;
+                    font-weight: 700;
+                    font-size: 1.5em;
+                    color: $fawn;
+                }
+            }
+            .explore-btn:hover{
+                background-image: none;
+                background-color: rgba(148, 148, 148, 0.356);
+                border: 2px solid white;
+                color: white;
+            }
+        }
+    }
+    /* -----------X-------- Landing Page --------X------- */
+    
+    
+    /* --------X----- Main Content of the site -----X------ */
+    
+    section{
+        // background-color: yellow;
+        position: relative;
+        padding-top: 100px;
+        width: 100%;
+        min-height: 100%;
+        text-align: center;
+        scroll-snap-align: start;  // works with scroll-snap-type in the container to align the element
+        padding-bottom: 350px;  // this has to be done to avoid it from snapping back to the start.
+        
+        h1{  // will be applicable to all h1 inside section, even inside sub-sub division.
+            font-family: $josefin-sans;
+            padding: 20px;
+        }
+
+        .cards-container{
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            padding-bottom: 100px;
+            background: url(../Assets/Abract01.png) no-repeat;
+            background-size: 65%;
+            background-position: right;
+            background-attachment: fixed;
+
+            // background-color: greenyellow;
+
+            .card{
+                // background-color: pink;
+                // grid is better than flex.
+                display: grid; 
+                grid-template-columns: 1.7fr 1fr;
+                grid-gap: 1em;
+                height: 50vh;
+                width: 60%;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 60px;
+                border-bottom-right-radius: 2.3em;
+                border-top-left-radius: 2.3em;
+                box-shadow: 3px 2px 20px 1px rgba(0, 0, 0, 0.377);
+
+                div{
+                    height: 100%;
+                    border-top-left-radius: 2.3em;
+                    overflow: hidden; // to stop image from coming out when hovered.
+                    // background-color: yellow;
+
+                    img{
+                        // background-color: burlywood;
+                        border-top-left-radius: 2.3em;
+                        width: 100%;
+                        height: 100%;
+                        transition: all 1s ease;  // smooth transition
+                        cursor: pointer;
+
+                    }
+                    img:hover{
+                        transform: scale(1.3);
+                    }
+                }
+                h2{
+                    // background-color: rgb(112, 177, 112);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: $quicksand;
+                    font-size: 1.8em;
+                    transition: 0.3s ease;
+                        
+                }
+            }
+            .card:nth-of-type(even){
+                grid-template-columns: 1fr 1.7fr;
+
+                div{
+                    order: 2;
+                    border-top-left-radius: 0;
+                    border-bottom-right-radius: 2.3em;
+                    img{
+                        border-top-left-radius: 0em;
+                        border-bottom-right-radius: 2.3em;
+                    }
+                }
+            }
+            .detail-modal{
+                // background-color: khaki;
+                display: none;  // change to none
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                line-height: 2em;
+                padding: 20px;
+                background-color: rgba(0, 0, 0, 0.4);
+                opacity: 0;
+                font-size: 1.2em;
+                z-index: 11;
+                
+                .modal-content{
+                    background-color: $cornsilk;position: relative;
+                    width: 80%;
+                    height: 100%;
+                    margin: auto;
+                    padding: 20px;
+                    overflow-y: auto;
+                    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.568);
+                    //animation time
+                    animation-name: modal-animate;
+                    animation-duration: 0.6s;
+
+                    .close-modal{
+                        position: sticky;
+                        top: 30px;
+                        margin: 30px 50px 0 0;
+                        float: right;
+                        font-size: 2.5em;
+                        font-weight: 800;
+                        color: black;
+                        border: 2px solid black;
+                        border-radius: 2em;
+                        padding: 5px;
+                        transition: 0.3s;
+                    }
+                    .close-modal:hover{
+                        transform: scale(0.9);
+                    }
+                    .close-modal:focus{
+                        color: rgb(255, 163, 77);
+                    }
+
+                    h1{
+                        background-color: $cornsilk-dark;
+                        margin-top: 50px;
+                        border-radius: 1.7em;
+                        width: 60%;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    p{
+                        font-family: $quicksand;
+                        text-align: justify;
+                        padding: 50px;
+                    }
+                    .book-btn{
+                        font-family: $caveat;
+                        font-size: 1.8em;
+                        font-weight: 800;
+                    }
+                    
+                }
+            }
+            #khajjiar:target, 
+            #pithoragarh:target, 
+            #munnar:target,
+            #dzukou:target,
+            #chandipur:target{
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
+    /* --------X----- Main Content of the site ----X------- */
+}
+/* ----------X------Mother Container ------------X-------- */
+

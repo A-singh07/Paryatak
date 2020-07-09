@@ -1,0 +1,116 @@
+@import 'config';
+
+
+// mixin for hamburger lines
+@mixin ham-lines {
+    width: 40px;
+    background-color: white;
+    height: 4px;
+    border-radius: 10px;
+}
+
+
+nav{
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.315);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .ham-menu-wrap{
+        top: 0;
+        left: 0;
+        z-index: inherit;
+       
+        .toggler{
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0px;
+            margin: 0;
+            width: 70px;
+            height: 70px;
+            z-index: 10;    // need to be in the top at all cost
+            opacity: 0;
+        }
+
+        .menu-open{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: inherit;
+            background-color: black;
+
+            div{
+                @include ham-lines();
+                position: relative;
+                transition: transform 0.5s ease;
+                
+            }
+            div::before, div::after{
+                content: '';
+                position: absolute;
+                @include ham-lines();
+                top: -10px;
+            }
+            div::after{
+                top: 10px;
+            }
+        }
+          // Rotate Animation when hovered
+        .toggler:hover + .menu-open>div{
+            transform: rotate(180deg);
+        }
+          //Animation when checkbox is checked
+        .toggler:checked + .menu-open>div{
+            transform: rotate(315deg); // 180 + (90+45)
+        }
+          // turning into X
+        .toggler:checked + .menu-open>div:before,
+        .toggler:checked + .menu-open>div:after{
+            transform: rotate(90deg);  // for after & before elements
+            top: 0;
+        }
+          // animation of X while hovered
+        .toggler:checked:hover + .menu-open>div{
+            transform: rotate(405deg);
+        }
+    }
+    .site-name{
+        display: block;
+        font-family: $caveat;
+        font-weight: 700;
+        font-size: 2.5em;
+        padding: 8px 0px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    .site-name:hover{
+        transform: scale(1.1);
+    }
+    
+    .feedback{
+        display: block;
+        font-family: $josefin-sans;
+        font-weight: 700;
+        font-size: 1.3em;
+        color: black;
+        cursor: pointer;
+        transition: 0.3s ease;
+        padding: 8px 25px;
+    }
+    .feedback:hover{
+        transform: scale(1.1);
+    }
+
+}
