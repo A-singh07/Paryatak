@@ -1,7 +1,7 @@
 
 DO THESE CHANGES:
 
--> Replace "Feedback" with "Contact" or a Login Form in top rigth of the nav-bar.
+-> add Login form in top right of nav
 -> change font-family for text "India" in the header
 
 

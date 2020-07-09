@@ -115,8 +115,7 @@ h1{
         width: 100%;
         min-height: 100%;
         text-align: center;
-        scroll-snap-align: start;  // works with scroll-snap-type in the container to align the element
-        padding-bottom: 350px;  // this has to be done to avoid it from snapping back to the start.
+        scroll-snap-align: center;  // works with scroll-snap-type in the container to align the element
         
         h1{  // will be applicable to all h1 inside section, even inside sub-sub division.
             font-family: $josefin-sans;
@@ -274,6 +273,50 @@ h1{
         }
     }
     /* --------X----- Main Content of the site ----X------- */
+
+    /* --------------------Footer ---------------------------- */
+    footer{
+        // background-color: brown;
+        width: 100%;
+        height: 15vh;
+        position: relative;
+        scroll-snap-align: start;
+
+        .contact{
+            background-color:black;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            text-align: center;
+
+            a{
+                display:inline-block;
+                width: 45px;
+                height: 45px;
+                padding: 13px;
+                border-radius: 50%;
+                background-color: white;
+                margin: 5px;
+                transition: 0.3s ease-out;
+
+                i{
+                    font-size: 1.2em;
+                }
+            }
+            #facebook:hover{
+                background-color: $facebook-color;
+                color: white;
+            }
+            #instagram:hover{
+                background: $instagram-color;
+                color: white;
+            }
+
+        }
+    }
+
+
+/* ------------X--------Footer ----------------X------------ */
+
 }
 /* ----------X------Mother Container ------------X-------- */
-

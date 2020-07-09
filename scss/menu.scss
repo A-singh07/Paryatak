@@ -100,14 +100,17 @@ nav{
     }
     
     .feedback{
+        // background-color: brown;
         display: block;
         font-family: $josefin-sans;
+        height: 55px;
         font-weight: 700;
         font-size: 1.3em;
         color: black;
         cursor: pointer;
         transition: 0.3s ease;
-        padding: 8px 25px;
+        margin-right: 10px;
+        padding: 20px;
     }
     .feedback:hover{
         transform: scale(1.1);
