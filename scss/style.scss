@@ -22,7 +22,7 @@ h1{
     margin: 20px;
     font-size: 1.4em;
     background-image: $btn-gradient-1;
-    padding: 20px 40px;
+    padding: 15px 30px;
     border-radius: 2em;
     color: rgb(38, 44, 109);
     transition: all 0.4s ease;
@@ -94,6 +94,9 @@ h1{
                     font-size: 1.5em;
                     color: $fawn;
                 }
+            }
+            .explore-btn{
+                padding: 20px 40px;
             }
             .explore-btn:hover{
                 background-image: none;
@@ -257,19 +260,31 @@ h1{
                         text-align: justify;
                         padding: 50px;
                     }
-                    .book-btn{
+                    .map-btn{
                         font-family: $caveat;
-                        font-size: 1.8em;
+                        font-size: 1.5em;
                         font-weight: 800;
                     }
-                    
+                    .map-btn:hover{
+                        transform: scale(1.1);
+                        opacity: 0.9;
+                    }
+                    .more-btn{
+                        @extend .map-btn
+                    }
                 }
+                // End of modal-content
             }
-            #khajjiar:target, 
-            #pithoragarh:target, 
-            #munnar:target,
-            #dzukou:target,
-            #chandipur:target{
+            #place1:target,
+            #place2:target,
+            #place3:target,
+            #place4:target,
+            #place5:target,
+            #place6:target,
+            #place7:target,
+            #place8:target,
+            #place9:target,
+            #place10:target{
                 display: block;
                 opacity: 1;
             }
