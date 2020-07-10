@@ -9,13 +9,12 @@
     border-radius: 10px;
 }
 
-
 nav{
     position: fixed;
     top: 0;
     z-index: 5;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: white;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.315);
     display: flex;
@@ -33,8 +32,8 @@ nav{
             top: 0;
             left: 0px;
             margin: 0;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             z-index: 10;    // need to be in the top at all cost
             opacity: 0;
         }
@@ -44,11 +43,11 @@ nav{
             top: 0;
             left: 0;
             width: 70px;
-            height: 70px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: inherit;
+            z-index: 9;
             background-color: black;
 
             div{
@@ -85,7 +84,71 @@ nav{
         .toggler:checked:hover + .menu-open>div{
             transform: rotate(405deg);
         }
+
+        .menu-container{
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+
+            .menu-content{
+                background-color: rgba(0, 0, 0, 0.712);
+                z-index: 8;
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+                column-gap: 10px;
+                width: 100%;
+                height: 100%;
+                padding: 60px;
+                opacity: 0;
+                transition: all 0.7s ease;
+    
+                .left-side-menu{
+                    // background-color: cornflowerblue;
+                    display: grid;
+                    justify-content: flex-end;
+                    padding: 30px;
+                    width: 100%;
+                    border-right: 5px solid white;
+    
+                    a{  
+                        // background-color: yellow;
+                        width: 300px;
+                        display: flex;
+                        align-items: center;
+                        justify-content:flex-end;
+                        padding-right: 40px;
+                        margin-top: 5px;
+                        height: 3em;
+                        font-size: 2.3em;
+                        color: white;
+                        font-family: $josefin-sans;
+                        transition: 0.5s ease;
+                    }
+                    a:hover{
+                        background-color: rgba(255, 255, 255, 0.103);
+                        border-radius: 1em;
+                        border-left: 5px solid white;
+                    }
+                }
+                .right-side-menu{
+                    // background-color: lightcoral;
+                    display: block;
+                }
+            }
+        }
+        /* -------X------ Menu-container -------X------- */
+        .toggler:checked ~ .menu-container{
+            visibility: visible;
+        }
+        .toggler:checked ~ .menu-container>.menu-content{
+            opacity: 1;
+        }
+
     }
+
     .site-name{
         display: block;
         font-family: $caveat;
@@ -115,5 +178,4 @@ nav{
     .feedback:hover{
         transform: scale(1.1);
     }
-
 }

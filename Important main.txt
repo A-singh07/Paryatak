@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-    <title>T.0</title>
-</head>
-<body>
-    <div class="mother-container">
-        <!-- -------------------- Navigation Menu -------------------- -->
-        <nav>         <!-- z = 5-->
-            <div class="ham-menu-wrap">      <!-- z = inherit -->
-                <input type="checkbox" class="toggler">  <!-- z = 10-->
-                <div class="menu-open">         <!-- Z= 9 -->
-                    <div><!-- for ham-menu lines --></div>
-                </div>
-                <div class="menu-container">   <!-- z = 8-->
-                    <div class="menu-content">
-                        <div class="left-side-menu">
-                            <a href="#shop">Shop</a>
-                            <a href="#about">About</a>
-                            <a href="#contact">Contact</a>
-                            <a href="#feedback">feedback</a>
-                        </div>
-                        <div class="right-side-menu">
-                            <img src="Assets/camera-wtih-landmarks.jpg"  width="100%" height="100%">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="site-name"><div><a href="#home">Paryatak</a></div></div>
-            <div class="feedback"><div><a href="#contact">contact</a></div></div>
-        </nav>
-        <!-- -----------x-------- Navigation Menu -----------X------- -->
-
-        <!-- --------------------- Header Area ------------------------->
-        <header id="home">
+<header id="home">
             <div class="header-bg-wrap">             <!-- Z = 0-->
                 <video src="Assets/traveling-bg-video.mp4"></video>   
                 <!-- add autoplay & loop="true" muted="true"-->
@@ -61,11 +22,12 @@
                     <div><img src="Assets/Images/khajjiar.jpg"></div>
                     <h2>Khajjiar,<br> Himachal Pradesh</h2>
                 </a>
+                <!-- <div></div> these empty divs are to compensate the  .card:nth-child attribute -->
                 <div id="khajjiar" class="detail-modal">     <!-- z= 11-->
                     <div class="modal-content">
                         <a href="#card-khajjiar" class="close-modal">&times;</a>
                         <h1>Khajjiar, <br>Himachal Pradesh</h1>
-                        <img src="Assets/Images/Khajjiar-2.jpg" width="70%" height="60%">
+                        <img src="Assets/Images/Khajjiar-2.jpg">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nihil vitae reprehenderit, ea eligendi cumque eveniet voluptate aliquid, est error cum numquam quam nulla laborum quis ex incidunt beatae sed. 
                         <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore mollitia nesciunt tempore, atque quam enim at voluptas deserunt eaque adipisci vero sit facere veritatis, voluptatibus impedit, quas nulla fugit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus modi magni aliquid nihil est maxime soluta, nemo, dolore optio sint quasi? Atque officiis modi deleniti quam cupiditate et, dolorum officia!</p>
                         <a href="#" class="btn book-btn">Book Now</a>
@@ -80,7 +42,7 @@
                     <div class="modal-content">
                         <a href="#card-pithoragarh" class="close-modal">&times;</a>
                         <h1>Pithoragarh, <br> Uttarakhand</h1>
-                        <img src="Assets/Images/Pithorgarh -1.jpg" width="70%" height="60%">
+                        <img src="Assets/Images/Pithorgarh -1.jpg">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nihil vitae reprehenderit, ea eligendi cumque eveniet voluptate aliquid, est error cum numquam quam nulla laborum quis ex incidunt beatae sed. 
                         <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore mollitia nesciunt tempore, atque quam enim at voluptas deserunt eaque adipisci vero sit facere veritatis, voluptatibus impedit, quas nulla fugit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus modi magni aliquid nihil est maxime soluta, nemo, dolore optio sint quasi? Atque officiis modi deleniti quam cupiditate et, dolorum officia!</p>
                         <a href="#" class="btn book-btn">Book Now</a>
@@ -96,7 +58,7 @@
                     <div class="modal-content">
                         <a href="#card-munnar" class="close-modal">&times;</a>
                         <h1>Munnar, <br> Kerala</h1>
-                        <img src="Assets/Images/Munnar-1.jpg" width="70%" height="60%">
+                        <img src="Assets/Images/Munnar-1.jpg">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nihil vitae reprehenderit, ea eligendi cumque eveniet voluptate aliquid, est error cum numquam quam nulla laborum quis ex incidunt beatae sed. 
                         <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore mollitia nesciunt tempore, atque quam enim at voluptas deserunt eaque adipisci vero sit facere veritatis, voluptatibus impedit, quas nulla fugit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus modi magni aliquid nihil est maxime soluta, nemo, dolore optio sint quasi? Atque officiis modi deleniti quam cupiditate et, dolorum officia!</p>
                         <a href="#" class="btn book-btn">Book Now</a>
@@ -112,7 +74,7 @@
                     <div class="modal-content">
                         <a href="#card-dzukou" class="close-modal">&times;</a>
                         <h1>Dzukou Valley, <br> Nagaland</h1>
-                        <img src="Assets/Images/Dzukou Valley- camping.jpg" width="70%" height="60%">
+                        <img src="Assets/Images/Dzukou Valley- camping.jpg" width="70%">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nihil vitae reprehenderit, ea eligendi cumque eveniet voluptate aliquid, est error cum numquam quam nulla laborum quis ex incidunt beatae sed. 
                         <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore mollitia nesciunt tempore, atque quam enim at voluptas deserunt eaque adipisci vero sit facere veritatis, voluptatibus impedit, quas nulla fugit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus modi magni aliquid nihil est maxime soluta, nemo, dolore optio sint quasi? Atque officiis modi deleniti quam cupiditate et, dolorum officia!</p>
                         <a href="#" class="btn book-btn">Book Now</a>
@@ -128,7 +90,7 @@
                     <div class="modal-content">
                         <a href="#card-chandipur" class="close-modal">&times;</a>
                         <h1>Chandipur sea beach, <br> Odisha</h1>
-                        <img src="Assets/Images/Chandipur-Beach-1.png" width="70%" height="60%">
+                        <img src="Assets/Images/Chandipur-Beach-1.png">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nihil vitae reprehenderit, ea eligendi cumque eveniet voluptate aliquid, est error cum numquam quam nulla laborum quis ex incidunt beatae sed. 
                         <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolore mollitia nesciunt tempore, atque quam enim at voluptas deserunt eaque adipisci vero sit facere veritatis, voluptatibus impedit, quas nulla fugit Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus modi magni aliquid nihil est maxime soluta, nemo, dolore optio sint quasi? Atque officiis modi deleniti quam cupiditate et, dolorum officia!</p>
                         <a href="#" class="btn book-btn">Book Now</a>
@@ -150,8 +112,3 @@
             </div>
         </footer>
         <!-- ---------x-------- Footer ---------------------x--- -->
-
-    </div>
-    <!--------------- End of Mother COntainer -------------->
-</body>
-</html>
