@@ -197,9 +197,7 @@ nav{
         padding: 8px 0px;
         cursor: pointer;
         transition: 0.3s ease;
-        @media screen and (max-width:$mobile), (max-width:$tablet){
-            margin-left: 100px;
-        }
+        margin-left: 100px;
     }
     .site-name:hover{
         transform: scale(1.1);
