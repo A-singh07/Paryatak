@@ -92,10 +92,10 @@ nav{
             left: 0;
             width: 100vw;
             height: 100vh;
+            z-index: 8;
 
             .menu-content{
                 background-color: rgba(0, 0, 0, 0.801);
-                z-index: 8;
                 display: grid;
                 grid-template-columns: 1fr 1.4fr;
                 column-gap: 20px;
@@ -103,22 +103,21 @@ nav{
                 height: 100%;
                 padding: 50px;
                 opacity: 0;
-                transition: 0.4s ease-out;
     
                 .left-side-menu{
                     // background-color: cornflowerblue;
-                    display: grid;
-                    justify-content: flex-end;
                     padding: 30px;
-                    width: 100%;
+                    padding-left: 70px;
+                    width: 60%;
+                    margin-left: auto;
                     border-right: 5px solid white;
                     transform: translate(-300px, 0px);
+                    transition: 0.7s ease-out;
                     opacity: 0;
-                    transition: 0.9s ease-out;
     
                     a{  
                         // background-color: yellow;
-                        width: 300px;
+                        width: 230px;
                         display: flex;
                         align-items: center;
                         justify-content:flex-end;
@@ -127,8 +126,11 @@ nav{
                         height: 3em;
                         font-size: 2.3em;
                         color: white;
-                        font-family: $josefin-sans;
-                        transition: 0.5s ease;
+                        font-family: $quicksand;
+                        font-weight: 700;
+                        border-bottom: 2px solid white;
+                        transition: border-radius 0.5s ease;
+                        // transform: translate(-200px, 0px);
 
                     }
                     a:hover{
@@ -140,12 +142,12 @@ nav{
                 .right-side-menu{
                     // background-color: lightcoral;
                     display: block;
-                    opacity: 0;
-                    transition: 1s ease;
+                    transform: scale(0);
+                    transition: 0.5s ease-out;
                     
                     img{
-                        border-radius: 70%;
-                        transition: 1s ease;
+                        border-radius: 100%;
+                        transition: 0.5s ease;
                     }
                 }
             }
@@ -157,15 +159,15 @@ nav{
         .toggler:checked ~ .menu-container>.menu-content{
             opacity: 1;
         }
-        .toggler:checked ~ .menu-container>.menu-content>.right-side-menu{
+        .toggler:checked ~ .menu-container>.menu-content>.left-side-menu{
+            transform: translate(0px, 0px);
             opacity: 1;
+        }
+        .toggler:checked ~ .menu-container>.menu-content>.right-side-menu{
+            transform: scale(1);
         }
         .toggler:checked ~ .menu-container>.menu-content>.right-side-menu>img{
             border-radius: 2em;
-        }
-        .toggler:checked ~ .menu-container>.menu-content>.left-side-menu{
-            opacity: 1;
-            transform: translate(0px, 0px);
         }
 
     }

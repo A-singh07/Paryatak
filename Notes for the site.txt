@@ -2,7 +2,6 @@
 DO THESE CHANGES:
 
 -> add Login form in top right of nav
--> change font-family for text "India" in the header
 
 
 SPECIAL THINGS DONE:
