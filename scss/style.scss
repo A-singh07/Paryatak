@@ -65,8 +65,16 @@ h1{
             overflow: hidden;
     
             video{
+                position: absolute;
                 min-width: 100%;
                 min-height: 100%;
+
+                @media screen and (max-width:$tablet), (min-width:$mobile) {
+                    left: -30%;
+                }
+                @media screen and (max-width:$mobile){
+                    left: -60%;
+                }
             }
         }
     
