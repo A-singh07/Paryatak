@@ -95,7 +95,7 @@ nav{
             z-index: 8;
 
             .menu-content{
-                background-color: rgba(0, 0, 0, 0.801);
+                background-color: rgba(0, 0, 0, 0.849);
                 display: grid;
                 grid-template-columns: 1fr 1.4fr;
                 column-gap: 20px;
@@ -103,17 +103,27 @@ nav{
                 height: 100%;
                 padding: 50px;
                 opacity: 0;
+                @media screen and (max-width:$tablet),(max-width:$mobile){
+                    grid-template-columns: 1fr;
+                    background-color: rgba(0, 0, 0, 0.904);
+                }
     
                 .left-side-menu{
                     // background-color: cornflowerblue;
                     padding: 30px;
                     padding-left: 70px;
-                    width: 60%;
                     margin-left: auto;
                     border-right: 5px solid white;
                     transform: translate(-300px, 0px);
                     transition: 0.7s ease-out;
                     opacity: 0;
+                    @media screen and (max-width:$tablet),(max-width:$mobile){
+                        width: 80%;
+                        margin: 0px auto;
+                        border-right: none;
+                        display: grid;
+                        justify-content: center;
+                    }
     
                     a{  
                         // background-color: yellow;
@@ -131,6 +141,10 @@ nav{
                         border-bottom: 2px solid white;
                         transition: border-radius 0.5s ease;
                         // transform: translate(-200px, 0px);
+                        @media screen and (max-width:$tablet) {
+                            font-size: 2em;
+                            width: 200px;
+                        }
 
                     }
                     a:hover{
@@ -144,6 +158,9 @@ nav{
                     display: block;
                     transform: scale(0);
                     transition: 0.5s ease-out;
+                    @media screen and (max-width:$tablet){
+                        display: none;
+                    }
                     
                     img{
                         border-radius: 100%;
@@ -180,6 +197,9 @@ nav{
         padding: 8px 0px;
         cursor: pointer;
         transition: 0.3s ease;
+        @media screen and (max-width:$mobile), (max-width:$tablet){
+            margin-left: 100px;
+        }
     }
     .site-name:hover{
         transform: scale(1.1);
