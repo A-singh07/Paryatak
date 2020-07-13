@@ -46,6 +46,10 @@ h1{
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory ;   // dealing with only y-axis and it's mandatory.
 
+    @media screen and (max-width: $tablet), (max-width:$mobile){
+        scroll-snap-type: none;
+    }
+
     header{
         position: relative;
         height: 100%;
@@ -54,6 +58,9 @@ h1{
         align-items: center;
         justify-content: center ;
         scroll-snap-align: start;  // works with scroll-snap-type in the container to align the element
+        @media screen and (max-width: $tablet), (max-width:$mobile){
+            scroll-snap-align: none;
+        }
     
         .header-bg-wrap{
             position: absolute;
@@ -150,6 +157,9 @@ h1{
         min-height: 100%;
         text-align: center;
         scroll-snap-align: start;  // works with scroll-snap-type in the container to align the element
+        @media screen and (max-width: $tablet), (max-width:$mobile){
+            scroll-snap-align: none;
+        }
         
         h1{  // will be applicable to all h1 inside section, even inside sub-sub division.
             font-family: $josefin-sans;
@@ -376,6 +386,7 @@ h1{
         scroll-snap-align: start;
         @media screen and (max-width:$mobile), (max-width: $tablet) {
             height: 12vh;
+            scroll-snap-align: none;
         }
 
         .contact{
