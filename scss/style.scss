@@ -76,11 +76,19 @@ h1{
                 min-width: 100%;
                 min-height: 100%;
 
-                @media screen and (max-width:$tablet) {
-                    left: -30%;
+                @media screen and (max-width:$tablet), (max-width:$mobile){
+                    display: none;
+                }
+            }
+            img{
+                position: absolute;
+                display: none;
+                height: 100%;
+                @media screen and (max-width:$tablet){
+                    display: block;
                 }
                 @media screen and (max-width:$mobile){
-                    left: -60%;
+                    left: -100px;
                 }
             }
         }
@@ -224,6 +232,9 @@ h1{
                     }
                     img:hover{
                         transform: scale(1.3);
+                        @media screen and (max-width: $mobile), (max-width: $tablet){
+                            transform: scale(1);
+                        }
                     }
                 }
                 h2{
